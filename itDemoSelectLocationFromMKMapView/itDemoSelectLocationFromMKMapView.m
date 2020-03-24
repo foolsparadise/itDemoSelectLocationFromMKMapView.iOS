@@ -1,12 +1,12 @@
 //
-//  itGet1LocationFromMKMapView
+//  itDemoSelectLocationFromMKMapView
 //  NULL
 //
 //  Created by foolsparadise on 4/12/2019.
 //  Copyright © 2019 github.com/foolsparadise All rights reserved.
 //
 
-#import "itGet1LocationFromMKMapView.h"
+#import "itDemoSelectLocationFromMKMapView.h"
 #define NSLog(FORMAT, ...) {\
 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];\
 [dateFormatter setDateStyle:NSDateFormatterMediumStyle];\
@@ -20,7 +20,7 @@ fprintf(stderr, "\n%s function:%s line:%d content:%s\n", [str UTF8String], __FUN
 #import <MapKit/MKPinAnnotationView.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface itGet1LocationFromMKMapView ()<MKMapViewDelegate,CLLocationManagerDelegate>
+@interface itDemoSelectLocationFromMKMapView ()<MKMapViewDelegate,CLLocationManagerDelegate>
 
 @property (strong, nonatomic)MKMapView * xMapView;
 
@@ -33,7 +33,7 @@ fprintf(stderr, "\n%s function:%s line:%d content:%s\n", [str UTF8String], __FUN
 
 @end
 
-@implementation itGet1LocationFromMKMapView
+@implementation itDemoSelectLocationFromMKMapView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -147,7 +147,7 @@ fprintf(stderr, "\n%s function:%s line:%d content:%s\n", [str UTF8String], __FUN
 {
     NSLog(@"");
     [self.navigationController popViewControllerAnimated:YES];
-    [self.delegate itGet1LocationFromMKMapViewDelegate:self.selectedLocation.copy placeMark:self.selectedPlaceMark.copy];
+    [self.delegate itDemoSelectLocationFromMKMapViewDelegate:self.selectedLocation.copy placeMark:self.selectedPlaceMark.copy];
     NSLog(@"%@ 当前的纬度与经度:%f,%f", self.selectedLocation, self.selectedLocation.coordinate.latitude, self.selectedLocation.coordinate.longitude);
 }
 #pragma mark CoreLocation delegate (定位失败)

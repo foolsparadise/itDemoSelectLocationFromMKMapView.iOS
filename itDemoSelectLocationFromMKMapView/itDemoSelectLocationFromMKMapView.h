@@ -1,5 +1,5 @@
 //
-//  itGet1LocationFromMKMapView
+//  itDemoSelectLocationFromMKMapView
 //  NULL
 //
 //  Created by foolsparadise on 4/12/2019.
@@ -11,7 +11,7 @@
 #import <CoreLocation/CLPlacemark.h>
 
 /**
-### itGet1LocationFromMKMapView
+### itDemoSelectLocationFromMKMapView
 在原生地图 MKMapView delegate方式 点选一个地点 Demo for MKMapView
 ### Usage
 import
@@ -21,15 +21,15 @@ Privacy - Location Always and When In Use Usage Description
 Privacy - Location When In Use Usage Description
 into your Info.plist
 ```
-#import "itGet1LocationFromMKMapView.h"
+#import "itDemoSelectLocationFromMKMapView.h"
 #import <CoreLocation/CLLocation.h>
 #import <CoreLocation/CLPlacemark.h>
-add <itGet1LocationFromMKMapViewDelegate>
+add <itDemoSelectLocationFromMKMapViewDelegate>
 code..
-itGet1LocationFromMKMapView * oneLocation = [[itGet1LocationFromMKMapView alloc] init];
+itDemoSelectLocationFromMKMapView * oneLocation = [[itDemoSelectLocationFromMKMapView alloc] init];
 oneLocation.delegate = self;
 [self.navigationController pushViewController:oneLocation animated:YES];
--(void)itGet1LocationFromMKMapViewDelegate:(CLLocation *)location placeMark:(CLPlacemark *)placeMark
+-(void)itDemoSelectLocationFromMKMapViewDelegate:(CLLocation *)location placeMark:(CLPlacemark *)placeMark
 {
  NSLog(@"%@ Current:%f,%f", location, location.coordinate.latitude, location.coordinate.longitude);
  NSLog(@"%@", placeMark);
@@ -40,16 +40,16 @@ oneLocation.delegate = self;
  */
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol itGet1LocationFromMKMapViewDelegate <NSObject>
+@protocol itDemoSelectLocationFromMKMapViewDelegate <NSObject>
 
 @optional
--(void)itGet1LocationFromMKMapViewDelegate:(CLLocation *)location placeMark:(CLPlacemark *)placeMark;
+-(void)itDemoSelectLocationFromMKMapViewDelegate:(CLLocation *)location placeMark:(CLPlacemark *)placeMark;
 
 @end
 
-@interface itGet1LocationFromMKMapView : UIViewController
+@interface itDemoSelectLocationFromMKMapView : UIViewController
 
-@property (nonatomic, weak) id<itGet1LocationFromMKMapViewDelegate>delegate;
+@property (nonatomic, weak) id<itDemoSelectLocationFromMKMapViewDelegate>delegate;
 
 @end
 
